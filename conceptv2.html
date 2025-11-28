@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FONTS - design</title>
+
+    <style>
+    body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+    }
+
+    header {
+        background-color: #fff;
+        border-bottom: 1px solid #ddd;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 1rem;
+    }
+
+    .nav-brand {
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: crimson;
+    }
+
+    ul {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        overflow-x: auto;
+        scrollbar-width: none; /* Firefox */
+    }
+
+    ul::-webkit-scrollbar {
+        display: none; /* Chrome/Safari */
+    }
+
+    li {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: crimson;
+        white-space: nowrap;
+        padding: 0.25rem 0.5rem;
+        transition: color 0.2s, background 0.2s;
+        border-radius: 5px;
+    }
+
+    a:hover {
+        background-color: crimson;
+        color: #fff;
+    }
+
+    /* Hamburger Button */
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .hamburger div {
+        width: 25px;
+        height: 3px;
+        background-color: crimson;
+        transition: all 0.3s;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        ul {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: #fff;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0;
+            display: none;
+            border-bottom: 1px solid #ddd;
+            height: 100px;
+        }
+
+        ul.show {
+            display: flex;
+        }
+
+        a {
+            padding: 0.75rem 1rem;
+            width: 100%;
+        }
+
+        .hamburger {
+            display: flex;
+        }
+    }
+</style>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="nav-brand">Redhot Concept</div>
+        <div class="hamburger" onclick="toggleMenu(this)">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul id="nav-menu">
+            <li><a href="index.html">Concept V1</a></li>
+            <li><a href="conceptv2.html">Concept V2</a></li>
+            <li><a href="conceptv3.html">Concept V3</a></li>
+        </ul>
+    </nav>
+</header>
+    <main>
+        <div>
+            <img src="RedHot Concept V2.png" alt="">
+        </div>
+    </main>
+</body>
+<script>
+    function toggleMenu(el) {
+        const menu = document.getElementById('nav-menu');
+        menu.classList.toggle('show');
+
+        // Animate hamburger
+        el.classList.toggle('open');
+    }
+</script>
+</html>
